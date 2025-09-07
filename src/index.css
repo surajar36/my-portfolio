@@ -1,0 +1,63 @@
+@import "tailwindcss";
+/* Keep these at the top */
+@tailwind utilities;
+
+/* Your Custom Global Styles */
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('https://api.fontshare.com/v2/css?f[]=clash-display@700,500,600&display=swap') format('woff2');
+  font-weight: 500 700;
+  font-style: normal;
+}
+
+body {
+  background-color: #e8dcd3;
+  color: #1A1A1A;
+  font-family: 'Inter', sans-serif;
+  cursor: none;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.font-clash {
+  font-family: 'ClashDisplay', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'ClashDisplay', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: #1A1A1A;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+  mix-blend-mode: difference;
+  filter: invert(1);
+}
+
+.cursor-grow {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #1A1A1A;
+}
+
+.project-card:hover .project-arrow {
+  transform: translate(0.25rem, -0.25rem);
+}
