@@ -22,6 +22,21 @@ const ProjectCard = ({ title, description, tags, link }) => (
         </div>
     </a>
 );
+// --- Define motion variants ---
+const listVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.15, // delay between each child
+        },
+    },
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
+
 
 const Projects = () => {
     const { projects } = portfolioData;
@@ -56,17 +71,24 @@ const Projects = () => {
 
 
                 {/* --- Projects List --- */}
-                <div className="flex flex-col space-y-12">
+                <motion.div
+                    className="flex flex-col space-y-12"
+                    variants={listVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
                     {projects.map((project) => (
-                        <ProjectCard
-                            key={project.id}
-                            title={project.title}
-                            description={project.description}
-                            tags={project.tags}
-                            link={project.link}
-                        />
+                        <motion.div key={project.id} variants={cardVariants}>
+                            <ProjectCard
+                                title={project.title}
+                                description={project.description}
+                                tags={project.tags}
+                                link={project.link}
+                            />
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
