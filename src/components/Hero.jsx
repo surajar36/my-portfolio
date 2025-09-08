@@ -9,7 +9,7 @@ const Hero = () => {
             <p className="text-base md:text-lg mb-6 max-w-xl">
                 {hero.subtitle}
             </p>
-            <h1 className="text-[16vw] leading-[0.9] font-clash font-bold uppercase tracking-[-0.05em]">
+            <h1 className="absolute bottom-0 text-[16vw] leading-[0.9] font-clash font-bold uppercase tracking-[-0.08em] mb-8 mr-8">
                 {hero.title}
             </h1>
         </section>
