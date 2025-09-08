@@ -10,6 +10,7 @@ import {
 import { FaFileExcel, FaChartBar } from "react-icons/fa";
 import { BsFiletypeSql } from "react-icons/bs";
 import { RiGeminiFill } from "react-icons/ri";
+import { motion } from "framer-motion";
 
 const Skillss = () => {
     const skills = [
@@ -31,32 +32,49 @@ const Skillss = () => {
             className="py-20 md:py-32 bg-[#e8dcd3] overflow-hidden"
         >
             <div className="container mx-auto px-4 text-center">
-                <p className="text-xs uppercase tracking-widest text-zinc-500 mb-4">
+                <motion.p
+                    className="text-xs uppercase tracking-widest text-zinc-500 mb-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                >
                     My Toolkit
-                </p>
-                <h2 className="text-3xl md:text-4xl font-bold font-clash mb-12 text-zinc-800">
+                </motion.p>
+
+                <motion.h2
+                    className="text-3xl md:text-4xl font-bold font-clash mb-12 text-zinc-800"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                    viewport={{ once: true }}
+                >
                     Skills & Technologies
-                </h2>
+                </motion.h2>
             </div>
 
-            {/* Change 1: Increased the overall height of the marquee container */}
-            <div className="w-full flex items-center h-28">
+            {/* Marquee container */}
+            <motion.div
+                className="w-full flex items-center h-28"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true }}
+            >
                 <div className="w-full flex items-center animate-marquee whitespace-nowrap">
                     {skills.concat(skills).map((skill, index) => (
-                        // Change 2: Increased the spacing between each skill item
                         <div key={index} className="flex items-center mx-12">
-                            {/* Change 3: Made icons MUCH larger using text-5xl and removed fixed w/h */}
-                            <div className="mr-4 text-3xl font-bold text-zinc-600">{skill.icon}</div>
-                            {/* Change 4: Increased font size for the skill name */}
+                            <div className="mr-4 text-3xl font-bold text-zinc-600">
+                                {skill.icon}
+                            </div>
                             <span className="text-3xl font-medium text-zinc-700">
                                 {skill.name}
                             </span>
                         </div>
                     ))}
                 </div>
-            </div>
+            </motion.div>
 
-            {/* I replaced the non-standard <style jsx> tag with a regular <style> tag which works everywhere. */}
             <style>{`
                 @keyframes marquee {
                   0% {
