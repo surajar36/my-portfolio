@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import {
     Chart as ChartJS,
     RadialLinearScale,
@@ -20,7 +21,6 @@ ChartJS.register(
 );
 
 // --- Skill Data Definitions ---
-
 const dataAnalystData = {
     labels: [
         'SQL',
@@ -59,7 +59,7 @@ const businessAnalystData = {
     datasets: [
         {
             label: 'Proficiency',
-            data: [95, 95, 60, 75, 95, 80, 90], // Matched data for identical shape
+            data: [95, 95, 60, 75, 95, 80, 90],
             backgroundColor: 'rgba(26, 26, 26, 0.2)',
             borderColor: 'rgba(26, 26, 26, 1)',
             borderWidth: 2,
@@ -70,7 +70,6 @@ const businessAnalystData = {
         },
     ],
 };
-
 
 const chartOptions = {
     responsive: true,
@@ -93,19 +92,13 @@ const chartOptions = {
         },
     },
     plugins: {
-        legend: {
-            display: false,
-        },
+        legend: { display: false },
         tooltip: {
             callbacks: {
                 label: function (context) {
                     let label = context.dataset.label || '';
-                    if (label) {
-                        label += ': ';
-                    }
-                    if (context.parsed.r !== null) {
-                        label += context.parsed.r;
-                    }
+                    if (label) label += ': ';
+                    if (context.parsed.r !== null) label += context.parsed.r;
                     return label;
                 }
             }
@@ -113,11 +106,12 @@ const chartOptions = {
     },
 };
 
-
 const Skills = () => {
     const [activeChart, setActiveChart] = useState('dataAnalyst');
-
     const chartData = activeChart === 'dataAnalyst' ? dataAnalystData : businessAnalystData;
+
+    const sectionRef = useRef(null);
+    const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
     const getButtonClass = (chartName) => {
         const baseClass = "px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ease-in-out transform focus:outline-none focus:ring-2 focus:ring-offset-2";
@@ -130,33 +124,54 @@ const Skills = () => {
     const description = {
         dataAnalyst: "From deep-diving into databases with SQL to crafting user-friendly frontends, I possess a balanced skill set to tackle data challenges from end to end.",
         businessAnalyst: "This chart visualizes my expertise in translating business needs into technical solutions through requirements gathering, stakeholder alignment, and process improvement."
-    }
+    };
 
     return (
-        <section id="skills" className="py-20 md:py-32 bg-[#e8dcd3]">
-            <div className="container mx-auto px-4 text-center">
+        <section ref={sectionRef} id="skills" className="py-20 md:py-32 bg-[#e8dcd3]">
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="container mx-auto px-4 text-center"
+            >
                 <p className="text-xs uppercase tracking-widest text-zinc-500 mb-4">What Skills I Have</p>
                 <h2 className="text-4xl md:text-5xl font-bold font-clash text-zinc-800 mb-6">Core Competencies</h2>
 
                 {/* --- Toggle Buttons --- */}
-                <div className="flex justify-center items-center space-x-4 mb-10">
+                <motion.div
+                    className="flex justify-center items-center space-x-4 mb-10"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                >
                     <button onClick={() => setActiveChart('dataAnalyst')} className={getButtonClass('dataAnalyst')}>
                         Data Analyst
                     </button>
                     <button onClick={() => setActiveChart('businessAnalyst')} className={getButtonClass('businessAnalyst')}>
                         Business Analyst
                     </button>
-                </div>
+                </motion.div>
 
-                <p className="max-w-2xl mx-auto mb-12 text-zinc-600">{description[activeChart]}</p>
+                <motion.p
+                    className="max-w-2xl mx-auto mb-12 text-zinc-600"
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                    {description[activeChart]}
+                </motion.p>
 
-                <div className="chart-container relative w-full max-w-[600px] mx-auto h-[70vw] max-h-[500px] md:h-[450px]">
+                <motion.div
+                    className="chart-container relative w-full max-w-[600px] mx-auto h-[70vw] max-h-[500px] md:h-[450px]"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.6, delay: 0.6, ease: 'easeOut' }}
+                >
                     <Radar data={chartData} options={chartOptions} />
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     );
 };
 
 export default Skills;
-
