@@ -13,7 +13,7 @@ const Header = () => {
     return (
         <motion.header
             id="header"
-            className="fixed top-0 left-0 right-0 z-50 bg-[#e8dcd3]/80 backdrop-blur-sm"
+            className="fixed top-0 left-0 right-0 z-50 bg-[#e8dcd3] "
             initial={{ y: -100, opacity: 0 }}   // starts above screen
             animate={{ y: 0, opacity: 1 }}      // slides down into view
             transition={{ duration: 0.6, ease: "easeOut" }}
