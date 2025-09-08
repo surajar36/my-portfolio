@@ -43,7 +43,15 @@ const About = () => {
 
                 {/* Scrollable Right Column */}
                 <div className="space-y-16">
-                    <h3 className="text-3xl md:text-4xl font-bold font-clash mb-10">My Process</h3>
+                    <motion.h3
+                        className="text-3xl md:text-4xl font-bold font-clash mb-10"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
+                        viewport={{ once: true }}
+                    >
+                        My Process
+                    </motion.h3>
                     <div className="space-y-12">
                         {about.process.map((step) => (
                             <motion.div
