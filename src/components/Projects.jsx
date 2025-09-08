@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 
-// This is a "sub-component" just for the project card.
-// It keeps the code clean.
 const ProjectCard = ({ title, description, tags, link }) => (
     <a href={link} className="block project-card">
         <div className="border-b border-[#1A1A1A]/20 pb-8">
@@ -24,16 +23,40 @@ const ProjectCard = ({ title, description, tags, link }) => (
     </a>
 );
 
-
 const Projects = () => {
     const { projects } = portfolioData;
 
+    const infoRef = useRef(null);
+    const isInView = useInView(infoRef, { once: true, margin: '-100px' });
+
     return (
         <section id="projects" className="py-20 md:py-32">
-            <div className="max-w-4xl mx-auto">
-                <p className="text-xs uppercase tracking-widest mb-4">My Work</p>
-                <h2 className="text-4xl md:text-5xl font-bold font-clash mb-16">Selected Works</h2>
-                <div className="space-y-12">
+            <div className="max-w-4xl mx-auto flex flex-col space-y-16">
+
+                {/* --- Sticky Info Panel --- */}
+                <motion.div
+                    ref={infoRef}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                    // This parent container is full-width and has no horizontal padding
+                    className="sticky top-20 bg-[#e8dcd3] pb-4"
+                >
+                    <div className="space-y-6 px-6 md:px-12">
+                        <p className="text-xs uppercase tracking-widest text-zinc-500">My Works</p>
+                        <h2 className="text-4xl md:text-5xl font-bold font-clash text-zinc-800">
+                            Selected Works
+                        </h2>
+                        <p className="text-zinc-600">
+                            Here are some of my key projects that showcase my skills and the range of work I have contributed to.
+                        </p>
+                    </div>
+                    <div className="w-full border-b border-zinc-400 mt-4"></div>
+                </motion.div>
+
+
+                {/* --- Projects List --- */}
+                <div className="flex flex-col space-y-12">
                     {projects.map((project) => (
                         <ProjectCard
                             key={project.id}
