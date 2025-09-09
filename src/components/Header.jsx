@@ -27,14 +27,16 @@ const Header = () => {
                 </a>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center space-x-8 font-bebas">
+                <div className="hidden md:flex items-center space-x-8 font-bold">
                     {navLinks.map((link) => (
                         <a
                             key={link.href}
                             href={link.href}
-                            className="text-sm uppercase tracking-widest"
+                            className="group relative text-sm uppercase tracking-widest"
+                            style={{ fontFamily: 'Poppins' }}
                         >
                             {link.title}
+                            <span className="nav-underline" />
                         </a>
                     ))}
                 </div>

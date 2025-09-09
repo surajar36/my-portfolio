@@ -133,3 +133,18 @@ h6 {
 .project-card:hover .project-arrow {
   transform: translate(0.25rem, -0.25rem);
 }
+
+/* Add this to your CSS file */
+.nav-underline {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background: #1A1A1A;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .nav-underline {
+  width: 100%;
+}
