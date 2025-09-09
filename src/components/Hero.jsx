@@ -22,7 +22,7 @@ const Hero = () => {
             className="min-h-screen flex flex-col justify-center items-start px-6"
         >
             {/* Subtitle */}
-            <div className="overflow-hidden w-[350px] mb-6 font-semibold">
+            <div className="overflow-hidden w-[350px] mb-6 ">
                 <motion.p
                     className="text-base md:text-lg"
                     style={{ fontFamily: 'Poppins' }}

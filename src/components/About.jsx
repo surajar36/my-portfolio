@@ -21,8 +21,9 @@ const About = () => {
                     </motion.p>
 
                     <motion.h2
-                        className="text-4xl md:text-5xl font-bold font-clash mb-8"
+                        className="text-5xl md:text-5xl mb-8 tracking-[0.03em]"
                         initial={{ opacity: 0, y: 30 }}
+                        style={{ fontFamily: 'Bebas Neue' }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
                         viewport={{ once: true }}
@@ -33,6 +34,7 @@ const About = () => {
                     <motion.div
                         className="space-y-6 text-base md:text-lg"
                         initial={{ opacity: 0, y: 40 }}
+                        style={{ fontFamily: 'Poppins' }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                         viewport={{ once: true }}
@@ -46,6 +48,7 @@ const About = () => {
                     <motion.h3
                         className="text-3xl md:text-4xl font-bold font-clash mb-10"
                         initial={{ opacity: 0, y: 30 }}
+                        style={{ fontFamily: 'Poppins' }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
                         viewport={{ once: true }}
@@ -62,10 +65,10 @@ const About = () => {
                                 transition={{ duration: 0.6, ease: "easeOut" }}
                                 viewport={{ once: true }}
                             >
-                                <h4 className="text-xl md:text-2xl font-bold font-clash mb-2">
+                                <h4 className="text-xl md:text-2xl font-bold font-clash mb-2" style={{ fontFamily: 'Poppins' }}>
                                     {step.id}. {step.title}
                                 </h4>
-                                <p>{step.description}</p>
+                                <p style={{ fontFamily: 'Poppins' }}>{step.description}</p>
                             </motion.div>
                         ))}
                     </div>
