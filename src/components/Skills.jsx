@@ -135,7 +135,7 @@ const Skills = () => {
                 className="container mx-auto px-4 text-center"
             >
                 <p className="text-xs uppercase tracking-widest text-zinc-500 mb-4">What Skills I Have</p>
-                <h2 className="text-4xl md:text-5xl font-bold font-clash text-zinc-800 mb-6">Core Competencies</h2>
+                <h2 className="text-4xl md:text-5xl font-bold font-clash text-zinc-800 mb-6" style={{ fontFamily: 'Poppins' }}>Core Competencies</h2>
 
                 {/* --- Toggle Buttons --- */}
                 <motion.div
@@ -144,16 +144,17 @@ const Skills = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    <button onClick={() => setActiveChart('dataAnalyst')} className={getButtonClass('dataAnalyst')}>
+                    <button onClick={() => setActiveChart('dataAnalyst')} className={getButtonClass('dataAnalyst')} style={{ fontFamily: 'Poppins' }}>
                         Data Analyst
                     </button>
-                    <button onClick={() => setActiveChart('businessAnalyst')} className={getButtonClass('businessAnalyst')}>
+                    <button onClick={() => setActiveChart('businessAnalyst')} className={getButtonClass('businessAnalyst')} style={{ fontFamily: 'Poppins' }}>
                         Business Analyst
                     </button>
                 </motion.div>
 
                 <motion.p
                     className="max-w-2xl mx-auto mb-12 text-zinc-600"
+                    style={{ fontFamily: 'Poppins' }}
                     initial={{ opacity: 0 }}
                     animate={isInView ? { opacity: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.4 }}
