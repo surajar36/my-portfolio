@@ -44,6 +44,7 @@ const Skillss = () => {
 
                 <motion.h2
                     className="text-3xl md:text-4xl font-bold font-clash mb-12 text-zinc-800"
+                    style={{ fontFamily: 'Poppins' }}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
