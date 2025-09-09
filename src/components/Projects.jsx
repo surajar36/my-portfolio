@@ -7,8 +7,8 @@ const ProjectCard = ({ title, description, tags, link }) => (
         <div className="border-b border-[#1A1A1A]/20 pb-8">
             <div className="flex justify-between items-start">
                 <div>
-                    <h3 className="text-3xl md:text-4xl font-bold font-clash">{title}</h3>
-                    <p className="mt-2 text-[#1A1A1A]/80">{description}</p>
+                    <h3 className="text-3xl md:text-4xl font-bold font-clash" style={{ fontFamily: "Poppins" }}>{title}</h3>
+                    <p className="mt-2 text-[#1A1A1A]/80" style={{ fontFamily: 'Poppins' }}>{description}</p>
                 </div>
                 <div className="text-2xl project-arrow transition-transform duration-300">→</div>
             </div>
@@ -59,10 +59,10 @@ const Projects = () => {
                 >
                     <div className="space-y-6 px-6 md:px-12">
                         <p className="text-xs uppercase tracking-widest text-zinc-500">My Works</p>
-                        <h2 className="text-4xl md:text-5xl font-bold font-clash text-zinc-800">
+                        <h2 className="text-4xl md:text-5xl font-bold text-zinc-800" style={{ fontFamily: 'Poppins' }}>
                             Selected Works
                         </h2>
-                        <p className="text-zinc-600">
+                        <p className="text-zinc-600" style={{ fontFamily: 'Poppins' }}>
                             Here are some of my key projects that showcase my skills and the range of work I have contributed to.
                         </p>
                     </div>
