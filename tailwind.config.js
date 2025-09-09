@@ -7,8 +7,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                bebas: ['"BebasNeue"', 'sans-serif'], // Use with class "font-bebas"
-                clash: ['"ClashDisplay"', 'sans-serif'], // Use with class "font-clash"
+                bebas: ['"Bebas Neue"', 'sans-serif'], // Use with class "font-bebas"
+                clash: ['Clash Display', 'sans-serif'], // Use with class "font-clash"
                 inter: ['Inter', 'sans-serif'], // Default Inter
             },
         },

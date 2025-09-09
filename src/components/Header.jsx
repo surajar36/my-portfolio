@@ -21,13 +21,13 @@ const Header = () => {
             <nav className="container mx-auto px-6 py-6 flex justify-between items-center">
                 <a
                     href="#hero"
-                    className="text-2xl font-bold font-clash tracking-wider"
+                    className="text-2xl font-clash font-bold tracking-wider"
                 >
                     A.R.
                 </a>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center space-x-8">
+                <div className="hidden md:flex items-center space-x-8 font-bebas">
                     {navLinks.map((link) => (
                         <a
                             key={link.href}

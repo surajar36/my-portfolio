@@ -11,7 +11,7 @@ const About = () => {
                 {/* Sticky Left Column */}
                 <div className="md:sticky md:top-32 self-start h-fit">
                     <motion.p
-                        className="text-xs uppercase tracking-widest mb-4"
+                        className="text-xs uppercase tracking-widest mb-4 "
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, ease: "easeOut" }}

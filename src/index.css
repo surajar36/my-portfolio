@@ -4,16 +4,80 @@
 
 /* Your Custom Global Styles */
 @font-face {
-  font-family: 'ClashDisplay';
+  font-family: 'Clash Display';
   src: url('https://api.fontshare.com/v2/css?f[]=clash-display@700,500,600&display=swap') format('woff2');
   font-weight: 500 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'BebasNeue';
+  font-family: 'Bebas Neue';
   src: url('https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXooxW5rygbi49c.woff2') format('woff2');
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJLmr19VF9eO.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1xlEA.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z19VF9eO.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z11lEA.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('https://fonts.gstatic.com/s/opensans/v34/mem8YaGs126MiZpBA-UFVZ0e.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('https://fonts.gstatic.com/s/opensans/v34/mem6YaGs126MiZpBA-UFUK0Udc1UAw.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('https://fonts.gstatic.com/s/opensans/v34/mem6YaGs126MiZpBA-UFUK0ddc1UAw.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('https://fonts.gstatic.com/s/opensans/v34/mem6YaGs126MiZpBA-UFUK0adc1UAw.ttf') format('truetype');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
